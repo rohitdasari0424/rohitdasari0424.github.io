@@ -31,11 +31,42 @@ My goal is that the code samples and concept sections will give simple explanati
 enable anyone to understand the algorithm completely and trouble shoot any problems they may incur.
 
 
+## Tank Drive vs Mecanum
+
+
+---
+
+
 <figure align="center">
     <img src="Images/field-centric-pure-pursuit-implementation.gif" class="rounded-lg" alt="Example of field-centric pure pursuit" style="border-radius:1.5%;">
-    <figcaption class="mt-2 text-sm text-center text-gray-600">The path following algorithm we will implement, in action.</figcaption>
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Path follower implemented for a Mecanum Drivetrain</figcaption>
 </figure>
 
+---
+
+<figure align="center">
+    <img src="Images/tank-follow.gif" class="rounded-lg" alt="Example of field-centric pure pursuit" style="border-radius:1.5%;">
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Path follower implemented for a Tank Drivetrain</figcaption>
+</figure>
+
+
+---
+
+This path follower can be implemented for both Tank and Mecanum drivetrains. However, there are some key differences between what is needed and how some methods are implemented for each respective drive train. 
+Each page will contain one of the notification bars shown below:
+
+> [!ATTENTION]
+> This is for both Tank and Mecanum Drivetrains
+
+> [!ATTENTION]
+> This is only for Mecanum drivetrains
+
+> [!ATTENTION]
+> This is only for Tank drivetrains
+
+If the page does not contain implementations or explanations necessary for your drive train type, you may skip over it.
+
+---
 
 ## Skills you will need
 
