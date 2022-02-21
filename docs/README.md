@@ -1,13 +1,12 @@
 # Get Started
 
-
 <p style = "font-weight : 300; font-size : 24px;">
 A comprehensive guide and documentation on implementation a minimalistic path following algorithm in FTC
 </p>
 
 ---
 
-> [!WARNING]
+>[!WARNING]
 > This site assumes that you are already moderately-versed with the Java language the FTC SDK.
 
 > [!TIP]
@@ -27,16 +26,47 @@ A comprehensive guide and documentation on implementation a minimalistic path fo
 Welcome! This website serves as a comprehensive documentation and guide on the implementation of field centric “pure pursuit” for Holonomic Drivetrains in FTC.
 This is intended to serve tips , sample code, and resources needed along with explanations and implementations of different control systems for accurate path following.
 
-Any team looking to implement a minimalistic and time efficient path following algorithm in FTC will be able to do so by following the code and conceptual explanations in this documentation. 
-My goal is that the code samples and concept sections will give simple explanations that will 
+Any team looking to implement a minimalistic and time efficient path following algorithm in FTC will be able to do so by following the code and conceptual explanations in this documentation.
+My goal is that the code samples and concept sections will give simple explanations that will
 enable anyone to understand the algorithm completely and trouble shoot any problems they may incur.
+
+
+## Tank Drive vs Mecanum
+
+
+---
 
 
 <figure align="center">
     <img src="Images/field-centric-pure-pursuit-implementation.gif" class="rounded-lg" alt="Example of field-centric pure pursuit" style="border-radius:1.5%;">
-    <figcaption class="mt-2 text-sm text-center text-gray-600">The path following algorithm we will implement, in action.</figcaption>
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Path follower implemented for a Mecanum Drivetrain</figcaption>
 </figure>
 
+---
+
+<figure align="center">
+    <img src="Images/tank-follow.gif" class="rounded-lg" alt="Example of field-centric pure pursuit" style="border-radius:1.5%;">
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Path follower implemented for a Tank Drivetrain</figcaption>
+</figure>
+
+
+---
+
+This path follower can be implemented for both Tank and Mecanum drivetrains. However, there are some key differences between what is needed and how some methods are implemented for each respective drive train.
+Each page will contain one of the notification bars shown below:
+
+> [!ATTENTION]
+> This is for both Tank and Mecanum Drivetrains
+
+> [!ATTENTION]
+> This is only for Mecanum drivetrains
+
+> [!ATTENTION]
+> This is only for Tank drivetrains
+
+If the page does not contain implementations or explanations necessary for your drive train type, you may skip over it.
+
+---
 
 ## Skills you will need
 
@@ -50,18 +80,18 @@ Although this implementation is very simple, there are some topics you will need
 ---
 
 1. Understanding of simple Trigonometry (Cosine , Secant , Tangent, etc.)
-    - [Visual explanation of trig functions](https://www.mathsisfun.com/sine-cosine-tangent.html)
-    - [The Organic Chemistry Tutor trig functions](https://www.youtube.com/watch?v=HAole1-hadc)
-   
+   - [Visual explanation of trig functions](https://www.mathsisfun.com/sine-cosine-tangent.html)
+   - [The Organic Chemistry Tutor trig functions](https://www.youtube.com/watch?v=HAole1-hadc)
+
 2. Understanding of hardware (Motors , Encoders)
-    - [Rev robotics: Explanation of encoder modes and getting positions](https://docs.revrobotics.com/rev-control-system/programming/using-encoder-feedback)
+   - [Rev robotics: Explanation of encoder modes and getting positions](https://docs.revrobotics.com/rev-control-system/programming/using-encoder-feedback)
 
 3. Basic Calculus (Derivatives , integrals)
-    - [An intro to derivatives in Calculus](https://www.mathsisfun.com/calculus/derivatives-introduction.html)
-    - [An intro to Integrals in Calculus](https://www.cuemath.com/calculus/integral/)
-    
+   - [An intro to derivatives in Calculus](https://www.mathsisfun.com/calculus/derivatives-introduction.html)
+   - [An intro to Integrals in Calculus](https://www.cuemath.com/calculus/integral/)
+
 4. Knowledge of the java programming knowledge
-    - [A full 12-hour Java course](https://www.youtube.com/watch?v=xk4_1vDrzzo)
+   - [A full 12-hour Java course](https://www.youtube.com/watch?v=xk4_1vDrzzo)
 
 
 ```java 
@@ -104,3 +134,5 @@ Although this implementation is very simple, there are some topics you will need
        return false;
     }
 ```
+
+
