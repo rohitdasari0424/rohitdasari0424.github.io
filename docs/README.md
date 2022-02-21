@@ -16,7 +16,6 @@ A comprehensive guide and documentation on implementation a minimalistic path fo
 > If your team does not want to invest money into expensive hardware such as encoders and dead wheels, this implementation may not be the right one for you.
 
 
-
 ## Introduction
 
 ---
