@@ -1,15 +1,15 @@
 
 # Mecanum Drivetrain
 
-> [!ATTENTION]
-> This page is only for Mecanum Drivetrains.
-
 <p style = "font-weight : 300; font-size : 24px;">
 On this page we will set up the Mecanum Drivetrain class. This class will contain all the movement code for the robot as well as the drivetrain motors and odometry encoders.
 For now , we will set up the constructor and debugging method that will return the encoder readings from the encoders. More methods and variable will be added as we progress through this documentation.
 </p>
 
 ---
+
+> [!ATTENTION]
+> This page is only for Mecanum Drivetrains.
 
 ?>
 Create the `MecanumDriveTrain.java` file under the `TeamCode` folder in your project directory.
