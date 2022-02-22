@@ -5,6 +5,10 @@ This section will go over the step-by-step process on how the path follower work
 </p>
 
 ---
+
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 > The first step of the algorithm is making the path
 > The path-follower algorithm works with 5 steps that run in a loop till the robot reaches the end of the path:
 >- Get the robot location
