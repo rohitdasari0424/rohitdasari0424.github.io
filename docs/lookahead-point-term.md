@@ -3,6 +3,9 @@
 
 ---
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 <b>Lookahead point</b> is a point on the path that is a certain distance away, a constant called the lookahead distance , from the current position
 on the robot. The lookahead point can also be referred to as the target position.
 
