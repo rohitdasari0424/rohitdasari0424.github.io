@@ -8,6 +8,9 @@
 
 ---
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 >> [!ATTENTION]
 > There are two configurations for odometry: two-wheel odometry and three-wheel odometry. We will only focus on the implementation of three-wheel odometry on this site as it is more accurate and precise.
 
