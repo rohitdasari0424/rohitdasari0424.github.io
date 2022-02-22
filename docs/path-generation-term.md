@@ -3,6 +3,9 @@
 
 ---
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 <b>Path Generation</b> will be used to do two things:
 - Inject the path with more points
 - Smooth the path
