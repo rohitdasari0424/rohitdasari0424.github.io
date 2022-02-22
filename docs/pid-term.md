@@ -1,6 +1,9 @@
 
 # PID
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 > [!TIP]
 > For PID Controllers to work properly, they need to be tuned very well. It is necessary to re-tune the PID Controllers whenever a heavy mecahnical change is made to the robot. With that in mind, it is optimal to tune PID Controllers only when you are sure there won't be any other significant mechanical changes on the robot.
 We will go over how to tune a PID controller later on in the documentation.
