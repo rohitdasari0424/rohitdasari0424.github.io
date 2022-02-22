@@ -1,6 +1,9 @@
 
 # Motor Class
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
+
 <p style = "font-weight : 300; font-size : 24px;">
 We will set up the motor class. The motor class will consist of constructors and functions necessary for getting data from the encoders and setting powers.
 </p>
