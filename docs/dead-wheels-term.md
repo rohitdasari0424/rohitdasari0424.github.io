@@ -4,6 +4,10 @@
 > [!ATTENTION]
 > The dead wheels need to be spring-loaded so that they are always in contact with the ground. This ensures that the encoder readings are always accurate and that the wheels never raise off the ground as that would throw off the readings and position calculations.
 
+> [!ATTENTION]
+> This is for both Tank and Mecanum Drivetrains.
+>> Although dead wheels can be used on Tank drivetrains, it is usually not necessary. Since the drivetrain wheels on a Tank Drivetrain don't slip significantly, the two vertical wheels of a tank drivetrain with encoders can be used for localization instead.
+
 >[!TIP] [Dead Wheels Opensource Design](https://openodometry.weebly.com/)  
 ---
 
