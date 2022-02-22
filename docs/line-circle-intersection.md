@@ -162,6 +162,7 @@ For the code implementation, we will calculate the three quadratic terms using t
 
 Since a line-circle intersection could possibly have two solutions (two intersection points), the method should return an array of intersection points instead of a single point.
 
+
 ```java 
 // Parameter linePoint1: The starting point of the line segment we are on
 // Parameter linePoint2: The ending point of the line segment we are on

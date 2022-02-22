@@ -7,9 +7,13 @@ This page will go over the implementation of the goToPosition() method. This met
 
 ---
 
-The <b>goToPosition()</b> will be used to calculate the PID Outputs to get to the target position (lookahead point) and pass in these three movement outputs : movement_x , movement_y , and movement_turn to the field centric method.
+The <b>goToPosition()</b> will be used to calculate the PID Outputs to get to the target position (lookahead point) and pass in the movement variables to the robot or field centric methods to calculate the individual motor powers.
 
 ## Code Implementation
+
+<!-- tabs:start -->
+
+#### **Mecanum Drivetrain**
 
 Since the power-setting is being handled in the field centric, the goToPosition() method is rather simple. We will calculate three PID outputs:
 - `PID Output of x error`
@@ -43,6 +47,40 @@ Since the power-setting is being handled in the field centric, the goToPosition(
         fieldCentric(movement_x , movement_y , movement_turn , movementSpeed);
     }
 ```
+
+#### **Tank Drivetrain**
+
+Since the power-setting is being handled in the robot-centric method, the goToPosition() method is rather simple. We will calculate two PID outputs:
+- `PID Output of displacement`
+- `PID Output of angle error`
+
+```java 
+    // Parameter targetPoint : The target point (x , y , targetHeading , movementSpeed , lookaheadDistance)
+    public void goToPosition(Point targetPoint){
+        // Whenever we deal with movements, we should always update the position tracker first
+        odometry.updateTracker();
+        
+        // The driveController controller is just an instance of the PID Controller class for displacement
+        // Pass in current position as the robot x and target position as the targetPoint.x
+        double movement_drive = driveController.getOutput(odometry.getX() , targetPoint.x);
+        
+        
+        // The turnController is just an instance of the PID Controller class for moving in the y direction
+        // Pass in current position as the robot heading and target position as the headingPoint.faceTowardsAngle
+        // Since faceTowardsAngle is in the degrees unit, we have to convert heading to degrees
+        double movement_turn = turnController.getOutput(Math.toDegrees(odometry.getHeading()) , targetPoint.faceTowardsAngle);
+        
+        /* Now we can just input these movement 
+        variables into the field centric method which 
+        will get the robot to the target position */
+        
+        robotCentric(movement_x , movement_y , movement_turn , movementSpeed);
+    }
+```
+
+
+<!-- tabs:end -->
+
 
 ---
 
