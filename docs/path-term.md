@@ -1,8 +1,12 @@
 # Path
 
+
 ---
 
 A <b>Path</b> is a set of points consisting of x and y coordinates. The robot would then follow this path and knows it has finished it once it reaches the final point in the path.
+
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains.
 
 ---
 
