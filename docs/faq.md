@@ -6,6 +6,9 @@ This page answers questions that you may have about things related to path follo
 
 ---
 
+> [!ATTENTION]
+> This page is for both Tank and Mecanum Drivetrains
+
 ## What is Pure Pursuit?
 
 The `pure pursuit controller` is a path following algorithm mainly used by differential drive (tank drive). The core mechanic of the Pure Pursuit controller is calculating the curvature that will move the robot from its current position (x, y) to its target position (x, y) smoothly and accurately. The target point is calculated using some distance away from the robot's current position, a constant called the `lookahead distance`. Pure Pursuit is mainly used to allow robots to turn while moving which essentially creates a smooth curve motion along turns making it a popular option for non-holonomic drivetrains (can only move back and forth / turn). Compared to other path-following algorithms such as Ramsete (another path following algorithm for tank drive) and motion planning libraries like RoadRunner (mainly used for holonomic drive trains), Pure pursuit does not have any control on acceleration.
