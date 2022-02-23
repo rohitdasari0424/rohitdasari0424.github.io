@@ -66,7 +66,6 @@ This method will be called in a loop and will return the PID power. This method 
     }
 ```
 
-
 <!-- tabs:start -->
 #### **Tank Drive Extra**
 
@@ -79,6 +78,7 @@ The PIDController class requires one extra method for Tank Drivetrains. This met
 ```
 
 <!-- tabs:end -->
+
 
 ## Set Methods
 
