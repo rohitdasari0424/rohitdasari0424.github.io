@@ -92,8 +92,6 @@ The PIDController class requires one extra method for Tank Drivetrains. This met
 
 ---
 
-
-
 <p style = "font-weight : 300; font-size : 24px;">
 Here's what the `PIDController` class should look like thus far:
 </p>
