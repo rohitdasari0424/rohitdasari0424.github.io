@@ -85,6 +85,9 @@ undershooting the blue line (target position) where <b>x is between 1.2 and 3</b
 
 The following code shows the implementation of the P-Value of the PID Controller. Put this in the beginning of the getOutput() method.
 
+<!-- tabs:start -->
+
+#### **getOutput(double currPos, double targetPos)**
 ```java 
     // Set the global error variable equal to the target position - current position 
     // For example, if you are facing forward and want to turn to 45 degrees, the error would be 45 (target heading) - 0 (current robot heading)
@@ -93,12 +96,25 @@ The following code shows the implementation of the P-Value of the PID Controller
     double P = KP * error; // Proportional term : KP constant * the error of the system
 ```
 
+#### **getOutput(double error)**
+```java 
+    // We already know the error of the system since we passed it in as an argument
+    
+    this.previousError = error; // Store the current error so we can use it during the next loop run
+    double P = KP * error; // Proportional term : KP constant * the error of the system
+```
+
+<!-- tabs:end -->
+
 ---
 
 <p style = "font-weight : 300; font-size : 24px;">
 This is what the getOutput() method should look like thus far:
-</p>
+</p>\
 
+<!-- tabs:start -->
+
+#### **getOutput(double currPos, double targetPos)**
 ```java 
     public double getOutput(double currPos , double targetPos){
         this.error = targetPos - currPos;
@@ -106,3 +122,13 @@ This is what the getOutput() method should look like thus far:
         double P = KP * error; // Proportional term : KP constant * the error of the system
     }
 ```
+
+#### **getOutput(double error)**
+```java 
+    public double getOutput(double error){
+        this.previousError = error;
+        double P = KP * error; // Proportional term : KP constant * the error of the system
+    }
+```
+
+<!-- tabs:end -->
