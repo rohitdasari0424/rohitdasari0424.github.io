@@ -78,6 +78,98 @@ This method will be called in a loop and will return the PID power. This method 
     }
 ```
 
+---
+
+## Tank Drive Extra
+
+The tank drive PIDController method requires one extra method. This method will be named the same as the `getOutput()` method and contain the similar code. It will, however, only have one paramter as opposed to the two parameters required for the other `getOutput()` method. This would allow us to directly pass in the error instead of passing in a target position and currentPosition and calculating it within the method. The significance of this will be seen in the implementation of the `goToPosition()` method for tank drive.
+
+```java 
+    // Parameter error: The error between the current state of the system and the target state of the system
+    public double getOutput(double error){
+    }
+```
+
+---
+
+<p style = "font-weight : 300; font-size : 24px;">
+Here's what the `PIDController` class should look like thus far:
+</p>
+
+<!-- tabs:start -->
+
+#### **Mecanum Drivetrain**
+
+```java 
+    private double KP;
+    private double KI;
+    private double KD;
+    private double error;
+    private double previousTime = 0;
+    private double deltaTime = 0;
+    private double previousError = 0;
+    
+    // Parameter KP : kp value of the PID Controller initialized
+    // Parameter KI : ki value of the PID Controller initialized
+    // Parameter KD : kd value of the PID Controller initialized
+    public PIDController(double KP , double KI , double KD){
+        this.KP = KP;
+        this.KI = KI;
+        this.KD = KD;
+    } 
+    
+    // Parameter currPos : Current position of the state (For example, the heading of the robot currently)
+    // Parameter targetPos : Target position of the robot (For example, the target heading you are trying to turn towards)
+    public double getOutput(double currPos , double targetPos){
+    }
+    
+    public void setConstants(double KP , double KI , double KD){
+        this.KP = KP;
+        this.KI = KI;
+        this.KD = KD;
+    }
+```
+
+#### **Tank Drivetrain**
+
+```java 
+    private double KP;
+    private double KI;
+    private double KD;
+    private double error;
+    private double previousTime = 0;
+    private double deltaTime = 0;
+    private double previousError = 0;
+    
+    // Parameter KP : kp value of the PID Controller initialized
+    // Parameter KI : ki value of the PID Controller initialized
+    // Parameter KD : kd value of the PID Controller initialized
+    public PIDController(double KP , double KI , double KD){
+        this.KP = KP;
+        this.KI = KI;
+        this.KD = KD;
+    } 
+    
+    // Parameter currPos : Current position of the state (For example, the heading of the robot currently)
+    // Parameter targetPos : Target position of the robot (For example, the target heading you are trying to turn towards)
+    public double getOutput(double currPos , double targetPos){
+    }
+    
+    // Parameter error: The error between the current state of the system and the target state of the system
+    public double getOutput(double error){
+    }
+    
+    public void setConstants(double KP , double KI , double KD){
+        this.KP = KP;
+        this.KI = KI;
+        this.KD = KD;
+    }
+```
+
+<!-- tabs:end -->
+
+---
+
 <p style = "font-weight : 300; font-size : 24px;">
 In the following pages, we will implement the getOutput() method by calculating the P , I , and D value.
 </p>
