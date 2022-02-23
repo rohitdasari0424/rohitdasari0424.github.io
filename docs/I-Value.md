@@ -75,7 +75,7 @@ This is the result of adding a <b>I-Value</b> to the example shown previously on
 
 ## Code Implementation
 
-The following code shows the implementation of the P-Value of the PID Controller. We only want the Integral term to take effect when the robot is very close to the target. For this reason we will only start integrating the error when the robot is 80% of the way there. Put the following code in the getOutput() method:
+The following code shows the implementation of the I-Value of the PID Controller. We only want the Integral term to take effect when the robot is very close to the target. For this reason we will only start integrating the error when the robot is 80% of the way there. Put the following code in the getOutput() method:
 
 ```java 
    // Check if you are greater than 80% of the way there
@@ -85,10 +85,53 @@ The following code shows the implementation of the P-Value of the PID Controller
    double I = KI * i;
 ```
 
+[//]: # ()
+[//]: # (<!-- tabs:start -->)
+
+[//]: # ()
+[//]: # (#### **getOutput&#40;double currPos, double targetPos&#41;**)
+
+[//]: # ()
+[//]: # (```java )
+
+[//]: # (   // Check if you are greater than 80% of the way there)
+
+[//]: # (   // If you are, then start integrating. If you're not , then just add 0.)
+
+[//]: # (   i += currPos > targetPos * 0.8 ? deltaTime * error : 0;)
+
+[//]: # (   // The I-Value is KI * the integral)
+
+[//]: # (   double I = KI * i;)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (#### **getOutput&#40;double error&#41;**)
+
+[//]: # ()
+[//]: # (```java )
+
+[//]: # (   // Check if you are greater than 80% of the way there)
+
+[//]: # (   // If you are, then start integrating. If you're not , then just add 0.)
+
+[//]: # (   i += currPos > targetPos * 0.8 ? deltaTime * error : 0;)
+
+[//]: # (   // The I-Value is KI * the integral)
+
+[//]: # (   double I = KI * i;)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (<!-- tabs:end -->)
+
+
 ---
 
 <p style = "font-weight : 300; font-size : 24px;">
-This is what the getOutput() method should look like thus far:
+This is what the getOutput() method shoulds look like thus far:
 </p>
 
 ```java 

@@ -27,7 +27,7 @@ The following is the code implementation of deltaTime :
 ---
 
 <p style = "font-weight : 300; font-size : 24px;">
-This is what the getOutput() method should look like thus far:
+This is what the getOutput() methods should look like thus far:
 </p>
 
 ```java 
@@ -38,3 +38,46 @@ This is what the getOutput() method should look like thus far:
         this.previousTime = System.currentTimeMillis();
     }
 ```
+
+[//]: # ()
+[//]: # (<!-- tabs:start -->)
+
+[//]: # ()
+[//]: # (#### **getOutput&#40;double currPos, double targetPos&#41;**)
+
+[//]: # (```java )
+
+[//]: # (    public double getOutput&#40;double currPos , double targetPos&#41;{)
+
+[//]: # (        this.error = targetPos - currPos;)
+
+[//]: # (        double P = KP * error; // Proportional term : KP constant * the error of the system)
+
+[//]: # (        this.deltaTime = System.currentTimeMillis&#40;&#41; - previousTime;)
+
+[//]: # (        this.previousTime = System.currentTimeMillis&#40;&#41;;)
+
+[//]: # (    })
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (#### **getOutput&#40;double error&#41;**)
+
+[//]: # (```java )
+
+[//]: # (    public double getOutput&#40;double error&#41;{)
+
+[//]: # (        double P = KP * error; // Proportional term : KP constant * the error of the system)
+
+[//]: # (        this.deltaTime = System.currentTimeMillis&#40;&#41; - previousTime;)
+
+[//]: # (        this.previousTime = System.currentTimeMillis&#40;&#41;;)
+
+[//]: # (    })
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (<!-- tabs:end -->)
+
