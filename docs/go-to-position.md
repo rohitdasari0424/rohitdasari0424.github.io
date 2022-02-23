@@ -73,7 +73,7 @@ Since the power-setting is being handled in the robot-centric method, the goToPo
         double targetPos = Math.sqrt(Math.pow(targetPoint.x, 2) - Math.pow(targetPoint.y,2));
         
         // The driveController controller is just an instance of the PID Controller class for displacement
-        // Pass in current position as the robot x and target position as the targetPoint.x
+        // Pass in current position as currPos and target position as targetPos
         double movement_drive = driveController.getOutput(currPos , targetPos);
         
         // The turnController is just an instance of the PID Controller class for moving in the y direction
