@@ -62,10 +62,10 @@ Since the power-setting is being handled in the robot-centric method, the goToPo
         
         // The getOutput takes the target position and current position as inputs
         // In the case of the error of the system being displacement (distance between the target point and current robot position) , the distance formula can be used to calculate the error
-        // The distance formula : d = √( (m2 - m1)^2 + (n2 - n1)^2 )
+        // The distance formula : d = √( (x2 - x1)^2 + (y2 - y1)^2 )
         // Since the getOutput() method already subtracts the currentPosition
         // from the targetPosition to calculate error, we can use the (odometry.getX(), odometry.getY()) 
-        // as (m2, n2) and (0, 0) as (m1, n1) to calculate the current state of the system.
+        // as (x2, y2) and (0, 0) as (x1, y1) to calculate the current state of the system.
         
         double currPos = Math.sqrt(Math.pow(odometry.getX(), 2) + Math.pow(odometry.getY(), 2));
         
