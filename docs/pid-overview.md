@@ -66,6 +66,16 @@ This method will be called in a loop and will return the PID power. This method 
     }
 ```
 
+## Tank Drive Extra
+
+The PIDController class requires one extra method for Tank Drivetrains. This method will be named the same as the `getOutput()` method and contain similar code. It will, however, only have one paramter as opposed to the two parameters required for the other `getOutput()` method. This would allow us to directly pass in the error instead of passing in a target position and currentPosition and calculating it within the method. The significance of this will be seen later in the implementation of the `goToPosition()` method for tank drive.
+
+```java 
+    // Parameter error: The error between the current state of the system and the target state of the system
+    public double getOutput(double error){
+    }
+```
+
 ---
 
 ## Set Methods
@@ -78,19 +88,9 @@ This method will be called in a loop and will return the PID power. This method 
     }
 ```
 
----
 
-## Tank Drive Extra
 
-The tank drive PIDController method requires one extra method. This method will be named the same as the `getOutput()` method and contain the similar code. It will, however, only have one paramter as opposed to the two parameters required for the other `getOutput()` method. This would allow us to directly pass in the error instead of passing in a target position and currentPosition and calculating it within the method. The significance of this will be seen in the implementation of the `goToPosition()` method for tank drive.
 
-```java 
-    // Parameter error: The error between the current state of the system and the target state of the system
-    public double getOutput(double error){
-    }
-```
-
----
 
 <p style = "font-weight : 300; font-size : 24px;">
 Here's what the `PIDController` class should look like thus far:
@@ -168,7 +168,6 @@ Here's what the `PIDController` class should look like thus far:
 
 <!-- tabs:end -->
 
----
 
 <p style = "font-weight : 300; font-size : 24px;">
 In the following pages, we will implement the getOutput() method by calculating the P , I , and D value.
