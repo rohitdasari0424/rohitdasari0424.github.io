@@ -106,8 +106,6 @@ The following code shows the implementation of the P-Value of the PID Controller
 
 <!-- tabs:end -->
 
----
-
 <p style = "font-weight : 300; font-size : 24px;">
 This is what the getOutput() method should look like thus far:
 </p>\
