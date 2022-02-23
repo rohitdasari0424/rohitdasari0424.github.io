@@ -126,9 +126,10 @@ Now, we will iterate through the intersections between the current line segment 
 
 ### Setting lookahead to last point
 
-If the robot is very close to the end of the path such that moving any further will cause the circle to intersect only at one point which is behind the robot, not the front, then we will just set the lookahead point to be equal to the last point of the path:
+If the robot gets very close to the end of the path, the radius of the circle we are intersecting will eventually be greater than the distance between the robot and the end of the path. This will cause the circle to only intersect the line at one point - which is behind the robot, not the front. This would cause the robot to move backwards instead of  towards the end point. The solution to this problem is to check if the robot is very close to the the point in which the circle would pass the end point. If it is, then set the target point to the end point of the path, essentially telling the robto to just go to the path end since we are getting close to it.
 
-```java 
+```java    
+    // Find the distance between the robot and the end of the path
     // If we are very close to the end of the path, then just set the lookahead to the last point in the path
     if(Math.sqrt(Math.pow(lastPoint.x - robotLocation.x , 2) + Math.pow(lastPoint.y - robotLocation.y , 2)) <= currPointInPath.lookaheadDistance + 5){
         lookahead.setPoint(lastPoint);
@@ -199,7 +200,7 @@ public static Point getLookaheadPoint(ArrayList<Point> path , Point robotLocatio
         }
         
         // Inherit faceTowardsAngle and movementSpeed from the line segment we are currently on
-        lookahead.faceTowardsAngle = currPointInPathfaceTowardsAngle;
+        lookahead.faceTowardsAngle = currPointInPath.faceTowardsAngle;
         lookahead.movementSpeed = currPointInPath.movementSpeed;
                                     
     }
