@@ -66,7 +66,8 @@ This method will be called in a loop and will return the PID power. This method 
     }
 ```
 
-## Tank Drive Extra
+<!-- tabs:start -->
+#### **Tank Drive Extra**
 
 The PIDController class requires one extra method for Tank Drivetrains. This method will be named the same as the `getOutput()` method and contain similar code. It will, however, only have one paramter as opposed to the two parameters required for the other `getOutput()` method. This would allow us to directly pass in the error instead of passing in a target position and currentPosition and calculating it within the method. The significance of this will be seen later in the implementation of the `goToPosition()` method for tank drive.
 
@@ -75,6 +76,8 @@ The PIDController class requires one extra method for Tank Drivetrains. This met
     public double getOutput(double error){
     }
 ```
+
+<!-- tabs:end -->
 
 ---
 
