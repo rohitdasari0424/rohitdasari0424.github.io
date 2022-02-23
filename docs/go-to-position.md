@@ -50,7 +50,7 @@ Since the power-setting is being handled in the field centric, the goToPosition(
 
 #### **Tank Drivetrain**
 
-Since the power-setting is being handled in the robot-centric method, the goToPosition() method is rather simple. We will calculate two PID outputs:
+Since the power-setting is being handled in the robot-centric method, the goToPosition() method is rather simple. We will calculate twocdcd cd PID outputs:
 - `PID Output of displacement`
 - `PID Output of angle error`
 
