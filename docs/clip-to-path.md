@@ -10,7 +10,18 @@ This page will go over the clipToPath() method.
 
 This method will intersect a perpendicular line going through the robot's center ( x position , y position) with every line segment of the path. It will then check which intersection point is the closest to the robot which will determine which line segment we are on. It will also tell us the index of the path we are currently on which we can then use to get that point of the path's details such as lookahead distance , movement speed , etc. This gives us control over the robot's lookahead distance and movement speed for each segment of the path.
 
+---
+
+<figure align="center">
+    <video id="sampleMovie" src="Images/clip_to_path.mov" height = "100%" width = "100%" style="border-radius: 1.5%" controls></video>
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Current index and current segment example</figcaption>
+</figure>
+
+---
+
 ## Code Implementation
+
+---
 
 ```java 
 // Parameter path : Pass in the path array list that the robot is following
@@ -20,7 +31,7 @@ public static Point clipToPath(ArrayList<Point> path , Point robotLocation){
 }
 ```
 
-## Iterate through path points
+### Iterate through path points
 
 ```java 
 // Parameter path : Pass in the path array list that the robot is following
@@ -40,7 +51,7 @@ public static Point clipToPath(ArrayList<Point> path , Point robotLocation){
 }
 ```
 
-## Clip To Line
+### Clip To Line
 
 ```java 
 // Parameter path : Pass in the path array list that the robot is following
@@ -78,7 +89,10 @@ public static Point clipToPath(ArrayList<Point> path , Point robotLocation){
 
 ---
 
+<p style = "font-weight : 300; font-size : 24px;">
 Here's how the final clipToPath() method should look like:
+</p>
+
 ```java 
 // Parameter path : Pass in the path array list that the robot is following
 // Parameter robotLocation : Pass in the robot location (x position , y position)

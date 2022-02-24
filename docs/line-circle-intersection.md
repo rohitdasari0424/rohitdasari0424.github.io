@@ -9,8 +9,6 @@ This page will go over the code implementation and math behind the line circle i
 
 <b>The Line circle intersection</b> algorithm finds the points at which a circle equation given in the form: `(x - h)^2 + (y - k)^2 = r^2` intersects with a line equation given in the form: `y = mx + b`.
 
----
-
 <figure align="center">
     <img src="../Images/line-equation.png" class="rounded-lg" alt="Line equation">
     <figcaption class="mt-2 text-sm text-center text-gray-600">Visual of the line equation. The equation of a line is y = mx + b where m is equal to the slope and b is equal to the y intercept of the line.</figcaption>
@@ -25,13 +23,21 @@ This page will go over the code implementation and math behind the line circle i
 
 ---
 
+<figure align="center">
+    <img src="../Images/line-circle-visual.jpg" class="rounded-lg" alt="circle intersects line">
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Example of a circle intersecting a line.</figcaption>
+</figure>
+
+---
+
+
 ## What will we use line-circle intersection for?
 
 Line-circle intersection will play a key role in our path following algorithm. It will calculate the intersections between the robot and the path that we are following:
 
 <figure align="center">
-    <img src="../Images/line-circle-visual.jpg" class="rounded-lg" alt="circle intersects line">
-    <figcaption class="mt-2 text-sm text-center text-gray-600">Example of a circle intersecting a line.</figcaption>
+    <video id="sampleMovie" src="Images/lookahead_circle.mov" height = "100%" width = "100%" style="border-radius: 1.5%" controls></video>
+    <figcaption class="mt-2 text-sm text-center text-gray-600">Circle around the robot center intersecting the path</figcaption>
 </figure>
 
 
